@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+:root {
+  --warm: #faf8f4;
+  --sand: #f3efe6;
+  --sand-deep: #e9e1d0;
+  --line: #e2dbc9;
+  --ink: #21301f;
+  --body: #55534a;
+  --muted: #948e7d;
+  --forest: #24402c;
+  --forest-deep: #182a1c;
+  --gold: #ab8a4a;
+  --gold-strong: #8a6d34;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-warm: var(--warm);
+  --color-sand: var(--sand);
+  --color-sand-deep: var(--sand-deep);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
+  --color-gold: var(--gold);
+  --color-gold-strong: var(--gold-strong);
+  --font-display: var(--font-display);
+  --font-text: var(--font-text);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--warm);
+    color: var(--body);
+    font-family: var(--font-text), "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display), "Songti SC", "Noto Serif SC", Georgia, "Times New Roman", serif;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
