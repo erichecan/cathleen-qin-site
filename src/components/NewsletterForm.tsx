@@ -26,11 +26,11 @@ export default function NewsletterForm() {
         type="email"
         required
         placeholder={t.contact.emailPlaceholder}
-        className="w-full border border-line bg-warm px-4 py-3 text-[0.95rem] text-ink placeholder:text-muted outline-none focus:border-gold"
+        className="w-full rounded-full border border-line bg-warm px-5 py-3 text-[0.95rem] text-ink placeholder:text-muted outline-none focus:border-coral"
       />
       <button
         type="submit"
-        className="shrink-0 border border-forest bg-forest px-6 py-3 text-[0.9rem] font-medium text-warm transition-colors hover:bg-transparent hover:text-forest"
+        className="shrink-0 rounded-full bg-coral px-7 py-3 text-[0.9rem] font-bold text-warm transition-colors hover:bg-coral-deep"
       >
         {t.contact.submitLabel}
       </button>

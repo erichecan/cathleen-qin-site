@@ -8,59 +8,44 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section
-      id="top"
-      className="relative flex min-h-[100vh] items-center overflow-hidden px-6 py-28 sm:px-10 sm:py-32"
-    >
-      <Image
-        src="/images/cathy-speaking-closeup.jpg"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-[50%_22%]"
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-gradient-to-b from-[#141b12]/80 via-[#141b12]/55 to-[#141b12]/85"
-      />
-      <div className="relative mx-auto w-full max-w-4xl">
+    <section id="top" className="border-b border-line/70 px-6 pb-16 pt-32 sm:px-10 sm:pb-24 sm:pt-40">
+      <div className="mx-auto grid max-w-5xl gap-10 sm:grid-cols-2 sm:items-center sm:gap-14">
         <Reveal>
-          <span className="mb-8 block text-[0.8rem] tracking-[0.01em] text-gold">
-            ({t.hero.eyebrow})
-          </span>
-          <h1 className="text-[2.7rem] leading-[1.16] tracking-[-0.01em] text-warm sm:text-[4.8rem] sm:leading-[1.08]">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-sand">
+            <Image
+              src="/images/cathy-portrait.jpg"
+              alt="Cathy Qin"
+              fill
+              priority
+              className="object-cover"
+              sizes="(min-width: 640px) 45vw, 90vw"
+            />
+          </div>
+        </Reveal>
+        <Reveal style={{ transitionDelay: "90ms" }}>
+          <h1 className="text-[3rem] leading-[1.05] text-ink sm:text-[4rem]">
             {t.hero.h1[0]}
             <br />
-            <span className="underline decoration-gold decoration-[3px] underline-offset-[10px]">
-              {t.hero.h1[1]}
-            </span>
+            {t.hero.h1[1]}
           </h1>
-          <p className="mt-9 max-w-xl text-[1.15rem] leading-[1.75] text-warm/75 sm:text-[1.25rem]">
+          <p className="mt-7 max-w-md text-[1.1rem] leading-[1.75] text-body">
             {t.hero.sub}
           </p>
-          <div className="mt-11 flex flex-wrap items-center gap-x-8 gap-y-4 text-[0.98rem]">
+          <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4 text-[0.98rem]">
             <a
-              href="#speaking"
-              className="rounded-full bg-gold px-7 py-3 font-medium text-[#1c1408] transition-colors hover:bg-gold-strong"
+              href="#offerings"
+              className="rounded-full bg-coral px-7 py-3 font-bold text-warm transition-colors hover:bg-coral-deep"
             >
               {t.hero.cta1}
             </a>
             <a
               href="#journal"
-              className="border-b border-warm/40 pb-1 text-warm/85 transition-colors hover:border-warm hover:text-warm"
+              className="text-body underline decoration-line underline-offset-4 transition-colors hover:text-ink"
             >
               {t.hero.cta2}
             </a>
           </div>
         </Reveal>
-      </div>
-
-      <div
-        aria-hidden
-        className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 sm:flex"
-      >
-        <span className="h-12 w-px bg-warm/30" />
       </div>
     </section>
   );

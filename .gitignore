@@ -42,3 +42,6 @@ next-env.d.ts
 
 # confidential client documents (not for public repo)
 /proposal/
+
+# local Claude Code session state
+.claude/scheduled_tasks.lock

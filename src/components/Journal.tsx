@@ -10,8 +10,8 @@ export default function Journal() {
     <section id="journal" className="border-b border-line/70 px-6 py-28 sm:px-10 sm:py-40">
       <div className="mx-auto max-w-4xl">
         <Reveal>
-          <span className="mb-5 block text-[0.78rem] tracking-[0.01em] text-gold-strong">
-            ({t.journal.eyebrow})
+          <span className="mb-5 block text-[0.9rem] font-bold text-coral-deep">
+            {t.journal.eyebrow}
           </span>
           <h2 className="text-[2.3rem] leading-[1.1] sm:text-[3.1rem]">{t.journal.h2}</h2>
           <p className="mt-8 max-w-xl text-[1.1rem] leading-[1.8] text-body sm:text-[1.2rem]">
@@ -27,7 +27,7 @@ export default function Journal() {
                 className="group flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-10"
               >
                 <span>
-                  <h3 className="text-[1.4rem] leading-snug text-ink transition-colors group-hover:text-gold-strong">
+                  <h3 className="text-[1.4rem] leading-snug text-ink transition-colors group-hover:text-coral-deep">
                     {post.title}
                   </h3>
                   <span className="mt-2 block max-w-xl text-[1rem] leading-[1.65] text-body">{post.dek}</span>

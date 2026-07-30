@@ -22,7 +22,7 @@ export default function Statement() {
           </div>
         </Reveal>
         <Reveal style={{ transitionDelay: "90ms" }}>
-          <span aria-hidden className="font-display text-[3.2rem] leading-none text-gold/70">
+          <span aria-hidden className="font-display text-[3.2rem] leading-none text-coral/70">
             &ldquo;
           </span>
           <p className="mt-2 font-display text-[1.7rem] italic leading-[1.4] tracking-[-0.005em] text-ink sm:text-[2.4rem] sm:leading-[1.35]">

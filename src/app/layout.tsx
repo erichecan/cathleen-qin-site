@@ -1,25 +1,24 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Fredoka, Nunito } from "next/font/google";
 import { LanguageProvider } from "@/lib/i18n";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const fredoka = Fredoka({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
-  style: ["normal", "italic"],
 });
 
-const inter = Inter({
+const nunito = Nunito({
   variable: "--font-text",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "Cathy Qin — Founder, Pioneer Group",
+  title: "Cathy Qin — Emotional Healing & Growth Mentor",
   description:
-    "Cathy Qin immigrated with a dream and no roadmap, and spent 19 years turning that experience into Pioneer Group — a Toronto-based platform for career, community, and healing.",
+    "Cathy Qin helps you release what's heavy and grow into who you're becoming — through Huizhimei Healing Center and the Huizhiling Women's Growth Circle.",
 };
 
 export default function RootLayout({
@@ -28,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={`${fredoka.variable} ${nunito.variable}`}>
       <body>
         <LanguageProvider>{children}</LanguageProvider>
       </body>

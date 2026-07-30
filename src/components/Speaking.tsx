@@ -11,8 +11,8 @@ export default function Speaking() {
     <section id="speaking" className="border-b border-line/70 bg-warm px-6 py-28 sm:px-10 sm:py-40">
       <div className="mx-auto max-w-4xl">
         <Reveal>
-          <span className="mb-5 block text-[0.78rem] tracking-[0.01em] text-gold-strong">
-            ({t.speaking.eyebrow})
+          <span className="mb-5 block text-[0.9rem] font-bold text-coral-deep">
+            {t.speaking.eyebrow}
           </span>
           <h2 className="text-[2.3rem] leading-[1.1] sm:text-[3.1rem]">{t.speaking.h2}</h2>
           <p className="mt-8 max-w-xl text-[1.1rem] leading-[1.8] text-body sm:text-[1.2rem]">
@@ -38,7 +38,7 @@ export default function Speaking() {
         <div className="grid gap-12 sm:grid-cols-3 sm:gap-10">
           {t.speaking.talks.map((talk, i) => (
             <Reveal key={talk.title} style={{ transitionDelay: `${i * 90}ms` }}>
-              <span className="font-display text-[1.6rem] text-gold/70">
+              <span className="font-display text-[1.6rem] text-coral/70">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-3 text-[1.2rem] leading-snug text-ink">{talk.title}</h3>

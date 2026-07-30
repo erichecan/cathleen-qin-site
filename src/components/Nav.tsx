@@ -7,8 +7,8 @@ export default function Nav() {
 
   const links = [
     { href: "#about", label: t.nav.about },
-    { href: "#speaking", label: t.nav.speaking },
-    { href: "#moments", label: t.nav.moments },
+    { href: "#offerings", label: t.nav.offerings },
+    { href: "#membership", label: t.nav.membership },
     { href: "#journal", label: t.nav.journal },
     { href: "#contact", label: t.nav.contact },
   ];
@@ -37,7 +37,7 @@ export default function Nav() {
           <button
             type="button"
             onClick={toggle}
-            className="shrink-0 border border-line px-1.5 py-1 text-[0.58rem] font-medium tracking-wide text-body transition-colors hover:border-gold hover:text-ink sm:px-2 sm:text-[0.65rem]"
+            className="shrink-0 border border-line px-1.5 py-1 text-[0.58rem] font-medium tracking-wide text-body transition-colors hover:border-coral hover:text-ink sm:px-2 sm:text-[0.65rem]"
             aria-label="Switch language"
           >
             {lang === "en" ? "中文" : "EN"}
