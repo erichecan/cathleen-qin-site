@@ -32,19 +32,20 @@ window.CONTENT = {
   /* ---------- 首屏 ---------- */
   hero: {
     title: 'Cathleen Qin',
-    tagline: 'Healing · Awakening · Authentic Living',
+    tagline: 'Heal. Awaken. Live Authentically.',
     lead: 'Helping people heal, awaken, and create a life that is authentic, meaningful, and whole.',
-    note: 'My first chapter was about helping people find a better career. My next chapter is about helping people find themselves.',
+    note: 'A better life begins with a deeper relationship with yourself.',
     primaryCta:   { label: 'START YOUR JOURNEY', href: '#contact' },
     secondaryCta: { label: 'MY STORY',           href: '#about'   },
     image: { src: 'images/hero-portrait.jpg', alt: 'Cathleen Qin 肖像' },
   },
 
-  /* ---------- 大引言横幅 ---------- */
+  /* ---------- Welcome 横幅 ---------- */
   quote: {
+    eyebrow: 'WELCOME',
     text: 'I spent years helping people change their lives. Then I realized transformation had to go deeper.',
-    body: 'For nearly two decades, I have worked with immigrants, newcomers, and professionals—through education, career transitions, employment support, and entrepreneurship—helping them build new lives and create greater possibilities for themselves and their families.',
-    image: { src: 'images/quote-vase.jpg', alt: '静物：花瓶与书' },
+    body: 'For nearly two decades, I helped newcomers, professionals, and entrepreneurs build better lives through education, career development, and opportunity. Over time, I realized that a better career did not always create a better life.',
+    image: { src: 'images/quote-vase.jpg', alt: 'Cathleen Qin 演讲舞台照' },
   },
 
   /* ---------- 转折点 ---------- */
@@ -67,8 +68,8 @@ window.CONTENT = {
     title: 'My Greatest Transformation Was Not Professional',
     intro: 'I had to slow down, listen, and turn inward.',
     pullquote: 'Who am I when I stop trying to become who I think I should be?',
-    body: 'Through healing, self-awareness, and the connection between body, mind, and soul, I began to come home to myself. That is where real transformation began.',
-    image: { src: 'images/about-portrait.jpg', alt: 'Cathleen Qin 坐姿肖像' },
+    body: 'Through healing, self-awareness, and the connection between body, mind, and soul, I began to understand transformation differently. Sometimes we do not need another achievement. Sometimes we need to come home to ourselves.',
+    image: { src: 'images/about-portrait.jpg', alt: 'Cathleen Qin 肖像' },
   },
 
   /* ---------- 理念 ---------- */
@@ -82,7 +83,7 @@ window.CONTENT = {
       'Healing is not only about feeling better.',
     ],
     pullquote: 'Every person carries gifts that deserve to be discovered, developed, and expressed.',
-    body: 'My work is to help people discover those gifts, remove what blocks them, and create the conditions where they can thrive in alignment with who they truly are.',
+    body: 'My work is to help people discover those gifts, remove what blocks them, and create the conditions where they can thrive.',
   },
 
   /* ---------- 转变的三个阶段 ---------- */
@@ -99,57 +100,59 @@ window.CONTENT = {
   /* ---------- 写作 ---------- */
   writing: {
     title: 'Writing',
-    body: 'Reflections and insights on the journey of healing, awakening, and authentic living.',
-    topics: ['Receiving', 'Inner Critic', 'Boundaries'],
-    link: { label: 'Read More on My Journal', href: '#journal' },
+    body: 'Reflections on healing, awakening, and authentic living.',
+    topics: ['Receiving', 'Inner Critic', 'Boundaries', 'Life Flow'],
+    link: { label: 'Read My Latest Reflections', href: '#journal' },
     image: { src: 'images/writing-desk.jpg', alt: '书桌上的笔记本与咖啡' },
   },
 
   /* ---------- 演讲 ---------- */
   speaking: {
     title: 'Speaking',
-    body: 'Keynotes and talks that inspire transformation in work, leadership, and life.',
+    body: 'Conversations that create transformation in work, leadership, and life.',
     topics: [
-      'Healing & Authentic Living',
-      'Women, Leadership & Reinvention',
-      'Career, Entrepreneurship & Life Transformation',
+      'Healing & Self-Awareness',
+      'Women & Authentic Living',
+      'Career, Purpose & Transformation',
+      'Leadership from Within',
+      'From Achievement to Wholeness',
+      'Body · Mind · Soul Transformation',
     ],
     cta: { label: 'INVITE CATHLEEN TO SPEAK', href: '#contact' },
-    image: { src: 'images/speaking-mic.jpg', alt: '演讲台上的麦克风' },
+    image: { src: 'images/speaking-mic.jpg', alt: '手持话筒演讲照' },
   },
 
-  /* ---------- 旗下平台 ---------- */
-  platforms: {
-    eyebrow: 'PLATFORMS BUILT WITH PURPOSE',
-    title: 'Building platforms that empower people to grow in career, wellness, and authentic living.',
+  /* ---------- 我的工作 ---------- */
+  myWork: {
+    eyebrow: 'MY WORK',
+    title: 'One mission. Different expressions.',
+    subtitle: 'Writing, speaking, education, healing, and platform building — all in service of helping people grow in purpose, wellbeing, and authentic living.',
     items: [
-      {
-        logo: { src: 'images/logo-pioneer-group.png', alt: 'Pioneer Group' },
-        text: 'A modern group creating impact through business, community, and sustainable growth.',
-        link: { label: 'Learn More', href: '#' },
-      },
-      {
-        logo: { src: 'images/logo-pioneer-consulting.png', alt: 'Pioneer Consulting' },
-        text: 'Empowering people and organizations through career and business consulting.',
-        link: { label: 'Learn More', href: '#' },
-      },
-      {
-        logo: { src: 'images/logo-soul-beauty.png', alt: 'Soul Beauty Healing Center' },
-        text: 'Holistic healing for body, mind, and soul through integrative approaches.',
-        link: { label: 'Learn More', href: '#' },
-      },
-      {
-        logo: { src: 'images/logo-soul-good.png', alt: "Soul Good Happy Women's Club" },
-        text: 'A supportive community for women to connect, grow, and live with purpose.',
-        link: { label: 'Learn More', href: '#' },
-      },
+      { icon: 'leaf',   title: 'WRITING',            text: 'Ideas and reflections for inner and outer transformation.'                  },
+      { icon: 'mic',    title: 'SPEAKING',            text: 'Conversations that inspire clarity, courage, and growth.'                  },
+      { icon: 'lotus',  title: 'EDUCATION & HEALING', text: 'Support for meaningful growth through learning and inner work.'            },
+      { icon: 'person', title: 'PLATFORMS',           text: 'An evolving ecosystem including Pioneer Group and related platforms.'      },
     ],
+  },
+
+  /* ---------- 个人留言 ---------- */
+  personalNote: {
+    eyebrow: 'A PERSONAL NOTE',
+    title: 'I am still on the journey too.',
+    body: 'I do not speak from a place of having mastered life. I speak as a woman, immigrant, entrepreneur, mother, founder, and lifelong learner — still healing, still questioning, still beginning again.',
+    questions: [
+      { icon: 'person', text: 'Who am I becoming?'                     },
+      { icon: 'lotus',  text: 'What am I ready to release?'            },
+      { icon: 'leaf',   text: 'What kind of life feels true to me now?' },
+    ],
+    image: { src: 'images/about-portrait.jpg', alt: 'Cathleen Qin' },
   },
 
   /* ---------- 页脚 ---------- */
   footer: {
-    quote: 'True transformation begins when we stop trying to become someone else and start becoming who we truly are.',
-    cta: { label: 'START YOUR HEALING JOURNEY', href: '#contact' },
+    quote: "Your next chapter doesn't have to look like your last one.",
+    sub: 'Heal what is ready to be healed. Awaken to who you truly are. Create from that place. Live authentically.',
+    cta: { label: 'START YOUR JOURNEY', href: '#contact' },
     /* icon 可选值：linkedin / youtube / instagram / mail */
     social: [
       { icon: 'linkedin',  label: 'LinkedIn',   href: '#' },
@@ -157,6 +160,7 @@ window.CONTENT = {
       { icon: 'instagram', label: 'Instagram',  href: '#' },
       { icon: 'mail',      label: 'Newsletter', href: '#' },
     ],
-    copyright: '© 2026 Cathleen Qin. All rights reserved.',
+    tagline: 'Cathleen Qin | Author · Speaker · Entrepreneur · Transformation Guide',
+    copyright: 'Healing · Awakening · Authentic Living',
   },
 };
