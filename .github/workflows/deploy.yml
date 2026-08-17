@@ -38,7 +38,8 @@ jobs:
             --project ${{ env.PROJECT_ID }} \
             --allow-unauthenticated \
             --min-instances=0 --max-instances=3 \
-            --memory=512Mi --cpu=1 \
+            --memory=256Mi --cpu=0.5 \
+            --concurrency=80 \
             --quiet
 
       - name: Verify

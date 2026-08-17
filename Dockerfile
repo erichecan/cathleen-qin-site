@@ -1,27 +1,9 @@
-FROM node:20-slim AS deps
-WORKDIR /app
-COPY package.json package-lock.json* ./
-RUN npm ci
+FROM nginx:1.27-alpine
 
-FROM node:20-slim AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY . .
-RUN npm run build
+RUN rm -f /etc/nginx/conf.d/default.conf
+COPY deploy/nginx.conf /etc/nginx/conf.d/site.conf
+COPY site/ /usr/share/nginx/html/
 
-FROM node:20-slim AS runner
-WORKDIR /app
-ENV NODE_ENV=production
-RUN addgroup --system --gid 1001 nodejs \
-  && adduser --system --uid 1001 nextjs
-
-COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-USER nextjs
 EXPOSE 8080
-ENV PORT=8080
-ENV HOSTNAME=0.0.0.0
 
-CMD ["node", "server.js"]
+CMD ["nginx", "-g", "daemon off;"]

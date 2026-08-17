@@ -1,7 +1,15 @@
 node_modules
 .next
 .git
+.github
+.claude
+.playwright-mcp
 proposal
 docs
+src
+public
 *.md
+*.png
 .env*
+.DS_Store
+*.tsbuildinfo
