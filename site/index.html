@@ -255,42 +255,41 @@ svg{display:block}
 /* ===========================================================================
    写作 / 演讲
    =========================================================================== */
-.dual{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,26px)}
-.dual__card{position:relative;overflow:hidden;background:var(--bg-card);min-height:330px;display:flex}
-.dual__media{position:absolute;top:0;bottom:0;width:36%;background-size:cover;background-position:center}
-.dual__card--l .dual__media{left:0;
-  -webkit-mask-image:linear-gradient(to right,#000 45%,transparent 100%);
-          mask-image:linear-gradient(to right,#000 45%,transparent 100%)}
-.dual__card--r .dual__media{right:0;
-  -webkit-mask-image:linear-gradient(to left,#000 45%,transparent 100%);
-          mask-image:linear-gradient(to left,#000 45%,transparent 100%)}
+.dual{
+  display:grid;grid-template-columns:45% 55%;gap:0;
+  background:var(--bg-card);overflow:hidden;
+}
+.dual__card{position:relative;overflow:hidden;display:flex;min-height:clamp(288px,24vw,358px)}
+.dual__card--r{border-left:1px solid var(--line)}
+.dual__media{position:absolute;top:0;bottom:0;background-size:cover}
+.dual__card--l .dual__media{left:0;width:36%;background-position:58% center;
+  -webkit-mask-image:linear-gradient(to right,#000 52%,transparent 100%);
+          mask-image:linear-gradient(to right,#000 52%,transparent 100%)}
+.dual__card--r .dual__media{right:0;width:50%;background-position:50% 4%;mix-blend-mode:multiply;
+  -webkit-mask-image:linear-gradient(to left,#000 62%,transparent 100%);
+          mask-image:linear-gradient(to left,#000 62%,transparent 100%)}
 .dual__body{
-  position:relative;z-index:1;padding:clamp(28px,3.4vw,42px);
-  display:flex;flex-direction:column;justify-content:center;
+  position:relative;z-index:1;padding:clamp(20px,2.1vw,28px) clamp(26px,3vw,38px);
+  display:flex;flex-direction:column;justify-content:flex-start;
 }
-.dual__card--l .dual__body{margin-left:30%;padding-right:clamp(24px,3vw,38px)}
-.dual__card--r .dual__body{margin-right:32%}
-.dual__head{display:flex;align-items:center;gap:16px}
+.dual__card--l .dual__body{margin-left:35%;padding-right:clamp(20px,2.4vw,30px)}
+.dual__card--r .dual__body{margin-right:45%;padding-left:clamp(38px,7.5%,76px)}
 .dual__head h2{
-  font-family:var(--serif);font-weight:500;color:var(--green-900);
-  font-size:clamp(1.45rem,2.4vw,1.9rem);letter-spacing:.09em;text-transform:uppercase;
+  font-family:var(--sans);font-weight:600;color:var(--green-900);
+  font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;
 }
-.dual__mic{
-  flex:none;width:52px;height:52px;border-radius:50%;background:var(--green-800);
-  color:#F0EBE0;display:grid;place-items:center;
-}
-.dual__mic .ic{width:25px;height:25px}
-.dual__body .rule{margin:14px 0 16px}
-.dual__body>p{font-size:.86rem;line-height:1.8;max-width:340px}
-.dual__topics{margin-top:16px}
+.dual__body>p{margin-top:12px;font-size:.8rem;line-height:1.75;max-width:300px}
+.dual__topics{margin-top:14px}
 .dual__topics li{
-  position:relative;padding-left:18px;font-size:.86rem;line-height:1.75;margin-bottom:6px;
+  position:relative;padding-left:16px;font-size:.8rem;line-height:1.7;margin-bottom:4px;
 }
 .dual__topics li::before{
-  content:'';position:absolute;left:2px;top:.72em;
-  width:4px;height:4px;border-radius:50%;background:var(--green-800);
+  content:'';position:absolute;left:2px;top:.66em;
+  width:5px;height:5px;border-radius:50%;background:var(--gold);
 }
-.dual__foot{margin-top:22px}
+.dual__foot{margin-top:auto;padding-top:20px}
+.dual__foot .btn{padding:12px 22px;font-size:.66rem}
+.dual__foot .arrow-link{font-size:.78rem}
 
 /* ===========================================================================
    旗下平台
@@ -419,9 +418,11 @@ svg{display:block}
   .journey__card{grid-template-columns:1fr}
   .stages__grid{grid-template-columns:1fr}
   .dual{grid-template-columns:1fr}
-  .dual__media{width:100%;height:170px;position:relative;top:auto;bottom:auto}
   .dual__card{flex-direction:column;min-height:0}
+  .dual__card--r{border-left:0;border-top:1px solid var(--line)}
   .dual__card--l .dual__media,.dual__card--r .dual__media{
+    position:relative;top:auto;bottom:auto;left:auto;right:auto;
+    width:100%;height:170px;background-position:center;
     -webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%);
             mask-image:linear-gradient(to bottom,#000 55%,transparent 100%)}
   .dual__card--l .dual__body,.dual__card--r .dual__body{margin:0}
@@ -488,11 +489,6 @@ svg{display:block}
       <path d="M22.5 47.5h19"/>
     </symbol>
 
-    <symbol id="icon-mic" viewBox="0 0 24 24">
-      <rect x="9" y="2.6" width="6" height="11" rx="3"/>
-      <path d="M5.6 11.2a6.4 6.4 0 0 0 12.8 0"/>
-      <path d="M12 17.6v3.6"/>
-    </symbol>
     <symbol id="icon-arrow" viewBox="0 0 24 24">
       <path d="M4 12h15M13.2 6l6 6-6 6"/>
     </symbol>
@@ -646,7 +642,6 @@ svg{display:block}
         <div class="dual__media" data-bg="writing.image"></div>
         <div class="dual__body">
           <div class="dual__head"><h2 data-t="writing.title"></h2></div>
-          <hr class="rule">
           <p data-t="writing.body"></p>
           <ul class="dual__topics" data-list="writing.topics">
             <template><li data-t="."></li></template>
@@ -662,11 +657,7 @@ svg{display:block}
       <article class="dual__card dual__card--r reveal" id="speaking">
         <div class="dual__media" data-bg="speaking.image"></div>
         <div class="dual__body">
-          <div class="dual__head">
-            <span class="dual__mic"><svg class="ic"><use href="#icon-mic"></use></svg></span>
-            <h2 data-t="speaking.title"></h2>
-          </div>
-          <hr class="rule">
+          <div class="dual__head"><h2 data-t="speaking.title"></h2></div>
           <p data-t="speaking.body"></p>
           <ul class="dual__topics" data-list="speaking.topics">
             <template><li data-t="."></li></template>
