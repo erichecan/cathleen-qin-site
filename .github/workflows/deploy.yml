@@ -5,21 +5,27 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      PROJECT_ID: supply-491510
+      PROJECT_ID: project-5136cf27-8999-458a-b3c
       REGION: us-central1
       SERVICE_NAME: cathleen-qin-site
-      IMAGE: us-central1-docker.pkg.dev/supply-491510/cathleen-qin-site/site:latest
+      IMAGE: us-central1-docker.pkg.dev/project-5136cf27-8999-458a-b3c/cathleen-qin-site/site:latest
 
     steps:
       - uses: actions/checkout@v4
 
       - uses: google-github-actions/auth@v2
         with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
+          project_id: project-5136cf27-8999-458a-b3c
+          workload_identity_provider: projects/970878162504/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+          service_account: github-deployer@project-5136cf27-8999-458a-b3c.iam.gserviceaccount.com
 
       - uses: google-github-actions/setup-gcloud@v2
 
@@ -43,6 +49,7 @@ jobs:
             --quiet
 
       - name: Verify
+        id: verify
         run: |
           URL=$(gcloud run services describe ${{ env.SERVICE_NAME }} \
             --region ${{ env.REGION }} --project ${{ env.PROJECT_ID }} \
@@ -50,4 +57,3 @@ jobs:
           echo "Deployed: $URL"
           echo "url=$URL" >> "$GITHUB_OUTPUT"
           curl -sf -o /dev/null -w "HTTP %{http_code}\n" "$URL"
-        id: verify
