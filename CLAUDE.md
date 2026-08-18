@@ -23,6 +23,9 @@
   - 镜像在 GitHub runner 上 `docker build` + `docker push`，workflow 里的 `gcloud run deploy --image`
     用的是已推好的镜像，不触发构建。仓库是 public，Actions 分钟数不计费。
   - 该项目 **`cloudbuild.googleapis.com` 未启用**（2026-08-18 核实），Cloud Build 想用也用不了 —— 别去启用它。
+  - workflow 有 `paths` 过滤：只有 `site/**`、`deploy/**`、`Dockerfile`、`.dockerignore`、
+    workflow 自身改动才会部署。**只改 CLAUDE.md / docs 不会触发部署**，需要手动发布时用
+    `gh workflow run deploy.yml -R erichecan/cathleen-qin-site`。
 - 本机 gcloud 默认 active account 是 `erichecan@gmail.com`（其他项目在用），它对本项目**无权限**。
   为不污染其他项目，本项目的每条 gcloud 命令都**显式带参数**，不要改全局配置：
 

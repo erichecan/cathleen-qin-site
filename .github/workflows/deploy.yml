@@ -3,6 +3,13 @@ name: Deploy to Cloud Run
 on:
   push:
     branches: ["main"]
+    # 只有真正影响线上站点的文件才触发部署；改 CLAUDE.md / docs 不重新构建镜像
+    paths:
+      - 'site/**'
+      - 'deploy/**'
+      - 'Dockerfile'
+      - '.dockerignore'
+      - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
 permissions:
