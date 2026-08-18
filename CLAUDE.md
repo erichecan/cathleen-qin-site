@@ -55,3 +55,43 @@
 - `github-deployer` SA 被授予 `roles/iam.workloadIdentityUser` 给该仓库的 principalSet
 - workflow 必须保留 `permissions: id-token: write`，删掉它认证会直接失败
 - SA 项目级角色：`roles/run.admin`、`roles/artifactregistry.writer`、`roles/iam.serviceAccountUser`
+
+# 成本约束：这个项目必须保持 $0（⛔ 硬要求）
+
+已核实（2026-08-18）：项目内**没有任何**产生费用的资源，且最贵的几个计费面 API 压根没启用。
+
+| 计费面 | 状态 | 免费额度 | 实际用量 |
+|---|---|---|---|
+| Compute Engine | **API 未启用** | — | 无 |
+| Cloud SQL | **API 未启用** | — | 无 |
+| GKE | **API 未启用** | — | 无 |
+| Firestore | **API 未启用** | — | 无 |
+| Cloud Storage | 无 bucket | 5GB | 0 |
+| BigQuery | 无数据集 | 10GB 存储 | 0 |
+| Pub/Sub | 无 topic | 10GB | 0 |
+| Artifact Registry | 1 个仓库 | 0.5GB | 22MB |
+| Cloud Run | 1 服务 / min-instances=0 | 200 万请求、180k vCPU-秒、360k GiB-秒/月 | 远低于 |
+| **出站流量** | ← 唯一有上限的项 | 1GiB/月（北美） | 单次首访 481KB ≈ **2179 次首访/月**封顶 |
+
+⛔ 不许做的事：
+
+- 不要启用 compute / sqladmin / container / firestore 任何一个 API。它们一旦启用并创建资源就开始按小时计费。
+- 不要把 `--min-instances` 改成大于 0 —— 那是常驻实例，会 24h 计费，这是最容易踩的坑。
+- 不要提高 `--memory` / `--cpu`，当前 256Mi + cpu 1 是够用的最小档。
+- 不要给站点加大体积图片/视频；出站流量是唯一会超的项。新增图片前先压缩（现有 9 张共 1.0MB）。
+
+✅ 已布置的护栏：
+
+- Artifact Registry cleanup policy：保留最近 2 个版本 + 3 天后删除未标记镜像，防止反复部署把 0.5GB 免费额度撑爆。
+- Billing budget `cathleen-qin-site zero-cost guard`：CAD $1，50% / 100% 两档告警，
+  filter 只针对本项目（`projects/970878162504`），不受结算账号下其他项目干扰。
+  账单邮件发到结算账号的管理员邮箱。
+
+自查命令：
+
+```bash
+gcloud run services describe cathleen-qin-site --region us-central1 \
+  --account it.pioneergroup@gmail.com --project project-5136cf27-8999-458a-b3c \
+  --format="value(spec.template.metadata.annotations['autoscaling.knative.dev/minScale'])"
+# 期望输出为空或 0；出现 >0 立刻改回去
+```
