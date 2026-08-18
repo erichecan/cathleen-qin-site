@@ -20,6 +20,9 @@
 
 - 本项目**只**部署到 `project-5136cf27-8999-458a-b3c`。旧项目 `supply-491510` 已弃用，任何命令中出现它都是错的。
 - 部署**只能**通过 `git push origin main` 触发 GitHub Actions，**禁止** `gcloud builds submit` 和本地 `gcloud run deploy`。
+  - 镜像在 GitHub runner 上 `docker build` + `docker push`，workflow 里的 `gcloud run deploy --image`
+    用的是已推好的镜像，不触发构建。仓库是 public，Actions 分钟数不计费。
+  - 该项目 **`cloudbuild.googleapis.com` 未启用**（2026-08-18 核实），Cloud Build 想用也用不了 —— 别去启用它。
 - 本机 gcloud 默认 active account 是 `erichecan@gmail.com`（其他项目在用），它对本项目**无权限**。
   为不污染其他项目，本项目的每条 gcloud 命令都**显式带参数**，不要改全局配置：
 
