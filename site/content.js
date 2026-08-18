@@ -69,7 +69,7 @@ window.CONTENT = {
     intro: 'I had to slow down, listen, and turn inward.',
     pullquote: 'Who am I when I stop trying to become who I think I should be?',
     body: 'Through healing, self-awareness, and the connection between body, mind, and soul, I began to understand transformation differently. Sometimes we do not need another achievement. Sometimes we need to come home to ourselves.',
-    image: { src: 'images/about-portrait.jpg', alt: 'Cathleen Qin 肖像' },
+    image: { src: 'images/journey-portrait.jpg', alt: 'Cathleen Qin 肖像' },
   },
 
   /* ---------- 理念 ---------- */
