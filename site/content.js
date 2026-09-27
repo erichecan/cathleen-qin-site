@@ -18,10 +18,10 @@ window.CONTENT = {
 
   /* ---------- 顶部导航 ---------- */
   nav: {
-    brand: 'Cathleen Qin',
+    brand: 'Cathleen Q',
     links: [
       { label: 'HOME',     href: '#home'     },
-      { label: 'ABOUT',    href: '#about'    },
+      { label: 'MY STORY', href: '#about'    },
       { label: 'SPEAKING', href: '#speaking' },
       { label: 'WRITING',  href: '#writing'  },
       { label: 'CONTACT',  href: '#contact'  },
@@ -31,10 +31,10 @@ window.CONTENT = {
 
   /* ---------- 首屏 ---------- */
   hero: {
-    title: 'Cathleen Qin',
+    title: 'Cathleen Q',
     tagline: 'Heal. Awaken. Live Authentically.',
-    lead: 'Helping people heal, awaken, and create a life that is authentic, meaningful, and whole.',
-    note: 'A better life begins with a deeper relationship with yourself.',
+    lead: 'Founder · Writer · Transformation Guide',
+    note: 'Helping people reconnect with themselves through Healing · Awakening · Authentic Living.',
     primaryCta:   { label: 'START YOUR JOURNEY', href: '#contact' },
     secondaryCta: { label: 'MY STORY',           href: '#about'   },
     image: { src: 'images/hero-portrait.jpg', alt: 'Cathleen Qin 肖像' },
@@ -42,9 +42,9 @@ window.CONTENT = {
 
   /* ---------- Welcome 横幅 ---------- */
   quote: {
-    eyebrow: 'WELCOME',
-    text: 'I spent years helping people change their lives. Then I realized transformation had to go deeper.',
-    body: 'For nearly two decades, I helped newcomers, professionals, and entrepreneurs build better lives through education, career development, and opportunity. Over time, I realized that a better career did not always create a better life.',
+    eyebrow: 'MEET CATHLEEN Q',
+    text: 'From building better careers to helping people come back to themselves.',
+    body: 'For nearly two decades, Cathleen built Pioneer Group and supported immigrants and professionals through education, career development, employment, and entrepreneurship. Her work later expanded through Soul Good Happy Women Club and Soul Beauty Healing Center. Today, those chapters come together in Back to Yourself — an invitation to heal, awaken, and live more authentically.',
     image: { src: 'images/quote-vase.jpg', alt: 'Cathleen Qin 演讲舞台照' },
   },
 
@@ -122,16 +122,16 @@ window.CONTENT = {
     image: { src: 'images/speaking-mic.jpg', alt: '手持话筒演讲照' },
   },
 
-  /* ---------- 我的工作 ---------- */
-  myWork: {
-    eyebrow: 'MY WORK',
-    title: 'One mission. Different expressions.',
-    subtitle: 'Writing, speaking, education, healing, and platform building — all in service of helping people grow in purpose, wellbeing, and authentic living.',
+  /* ---------- 我的历程 ---------- */
+  path: {
+    eyebrow: 'THE JOURNEY',
+    title: 'The Path That Brought Me Here',
+    subtitle: "Career · Women's Growth · Healing · Transformation",
     items: [
-      { icon: 'leaf',   title: 'WRITING',            text: 'Ideas and reflections for inner and outer transformation.'                  },
-      { icon: 'mic',    title: 'SPEAKING',            text: 'Conversations that inspire clarity, courage, and growth.'                  },
-      { icon: 'lotus',  title: 'EDUCATION & HEALING', text: 'Support for meaningful growth through learning and inner work.'            },
-      { icon: 'person', title: 'PLATFORMS',           text: 'An evolving ecosystem including Pioneer Group and related platforms.'      },
+      { number: '01', title: 'PIONEER GROUP',             text: 'Career & entrepreneurship — nearly two decades supporting immigrants and professionals.' },
+      { number: '02', title: 'SOUL GOOD HAPPY WOMEN CLUB', text: "Women's growth & community — creating space for connection, confidence, and possibility." },
+      { number: '03', title: 'SOUL BEAUTY HEALING CENTER', text: 'Healing & holistic wellbeing — supporting the connection between body, mind, and emotions.' },
+      { number: '04', title: 'BACK TO YOURSELF',           text: "Transformation — bringing career, leadership, women's growth, healing, and self-awareness together." },
     ],
   },
 
@@ -139,7 +139,7 @@ window.CONTENT = {
   personalNote: {
     eyebrow: 'A PERSONAL NOTE',
     title: 'I am still on the journey too.',
-    body: 'I do not speak from a place of having mastered life. I speak as a woman, immigrant, entrepreneur, mother, founder, and lifelong learner — still healing, still questioning, still beginning again.',
+    body: 'I do not speak from a place of having mastered life. I speak as a woman, immigrant, entrepreneur, mother, founder, and lifelong learner — still healing, still questioning, still beginning again. This ongoing journey is at the heart of Back to Yourself.',
     questions: [
       { icon: 'person', text: 'Who am I becoming?'                     },
       { icon: 'lotus',  text: 'What am I ready to release?'            },
@@ -150,17 +150,18 @@ window.CONTENT = {
 
   /* ---------- 页脚 ---------- */
   footer: {
-    quote: "Your next chapter doesn't have to look like your last one.",
-    sub: 'Heal what is ready to be healed. Awaken to who you truly are. Create from that place. Live authentically.',
+    quote: 'Come back to yourself.',
+    sub: 'Transformation is not about becoming someone new. It begins by reconnecting with who you truly are.',
     cta: { label: 'START YOUR JOURNEY', href: '#contact' },
-    /* icon 可选值：linkedin / youtube / instagram / mail */
+    /* icon 可选值：instagram / facebook / linkedin / youtube / mail */
     social: [
+      { icon: 'instagram', label: 'Instagram',  href: '#' },
+      { icon: 'facebook',  label: 'Facebook',   href: '#' },
       { icon: 'linkedin',  label: 'LinkedIn',   href: '#' },
       { icon: 'youtube',   label: 'YouTube',    href: '#' },
-      { icon: 'instagram', label: 'Instagram',  href: '#' },
       { icon: 'mail',      label: 'Newsletter', href: '#' },
     ],
-    tagline: 'Cathleen Qin | Author · Speaker · Entrepreneur · Transformation Guide',
+    tagline: 'Cathleen Q | Founder · Writer · Transformation Guide',
     copyright: 'Healing · Awakening · Authentic Living',
   },
 };
