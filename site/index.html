@@ -816,6 +816,7 @@ svg{display:block}
       var v = get(ctx, el.dataset.link);
       if (!v) return;
       if (v.href) el.setAttribute('href', v.href);
+      if (v.target) { el.setAttribute('target', v.target); el.setAttribute('rel', 'noopener'); }
       if (!v.label || el.hasAttribute('data-keep-text')) return;
       var slot = el.querySelector('span');
       if (slot) slot.textContent = v.label;

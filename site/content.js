@@ -152,7 +152,7 @@ window.CONTENT = {
   footer: {
     quote: 'Come back to yourself.',
     sub: 'Transformation is not about becoming someone new. It begins by reconnecting with who you truly are.',
-    cta: { label: 'START YOUR JOURNEY', href: '#contact' },
+    cta: { label: 'START YOUR JOURNEY', href: 'https://soulgoodwclub.org/', target: '_blank' },
     /* icon 可选值：instagram / facebook / linkedin / youtube / mail */
     social: [
       { icon: 'instagram', label: 'Instagram',  href: '#' },
