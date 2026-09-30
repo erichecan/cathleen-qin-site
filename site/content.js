@@ -155,10 +155,10 @@ window.CONTENT = {
     cta: { label: 'START YOUR JOURNEY', href: 'https://soulgoodwclub.org/', target: '_blank' },
     /* icon 可选值：instagram / facebook / linkedin / youtube / mail */
     social: [
-      { icon: 'instagram', label: 'Instagram',  href: '#' },
-      { icon: 'facebook',  label: 'Facebook',   href: '#' },
-      { icon: 'linkedin',  label: 'LinkedIn',   href: '#' },
-      { icon: 'youtube',   label: 'YouTube',    href: '#' },
+      { icon: 'instagram', label: 'Instagram',  href: 'https://www.instagram.com/cathleenqin/',        target: '_blank' },
+      { icon: 'facebook',  label: 'Facebook',   href: 'https://www.facebook.com/cathleen.qin',          target: '_blank' },
+      { icon: 'linkedin',  label: 'LinkedIn',   href: 'https://www.linkedin.com/in/cathleen-q-b0787942/', target: '_blank' },
+      { icon: 'youtube',   label: 'YouTube',    href: 'https://www.youtube.com/@CathleenQ',             target: '_blank' },
       { icon: 'mail',      label: 'Newsletter', href: '#' },
     ],
     tagline: 'Cathleen Q | Founder · Writer · Transformation Guide',
