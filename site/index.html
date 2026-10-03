@@ -421,7 +421,8 @@ svg{display:block}
   .personal-note__body>p,.foot__quote,.quote__text,.quote__note,.hero__note{max-width:none}
   .personal-note__questions{gap:14px}
   .personal-note__media{
-    position:relative;inset:auto;width:100%;height:min(56vw,300px);margin-bottom:26px;
+    position:relative;inset:auto;width:100%;aspect-ratio:3/4;height:auto;margin-bottom:26px;
+    background-position:center top;
     -webkit-mask-image:none;mask-image:none}
   .quote__body{max-width:none}
   .hero__media{position:relative;inset:auto;width:100%;height:min(60vw,380px);
@@ -439,9 +440,11 @@ svg{display:block}
   .dual__card--r{border-left:0;border-top:1px solid var(--line)}
   .dual__card--l .dual__media,.dual__card--r .dual__media{
     position:relative;top:auto;bottom:auto;left:auto;right:auto;
-    width:100%;height:170px;background-position:center;
+    width:100%;height:230px;
     -webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%);
             mask-image:linear-gradient(to bottom,#000 55%,transparent 100%)}
+  .dual__card--l .dual__media{background-position:center 25%}
+  .dual__card--r .dual__media{background-position:center top}
   .dual__card--l .dual__body,.dual__card--r .dual__body{margin:0}
   .dual__body>p{max-width:none}
 }
